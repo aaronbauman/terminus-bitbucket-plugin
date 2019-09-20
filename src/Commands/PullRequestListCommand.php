@@ -22,10 +22,10 @@ class PullRequestListCommand extends BitbucketBase {
    * @aliases bb:pr:list bitbucket:pr:list pr-list
    *
    * @field-labels
+   *     id: ID
    *     title: Title
    *     description: Description
    *     url: URL
-   *     id: ID
    *     destination: Destination Branch
    *     source: Source Branch
    *     state: State
@@ -34,7 +34,7 @@ class PullRequestListCommand extends BitbucketBase {
    *     author: Author
    *     merge_commit: Merge Commit
    *     closed_by: Closed By
-   * @default-fields title,id,source,destination,state,updated_on,author
+   * @default-fields id,title,source,destination,state,updated_on,author
    * @return RowsOfFields
    *
    * @option string $site The site whose pull requests to list. If not given,
@@ -94,10 +94,10 @@ class PullRequestListCommand extends BitbucketBase {
     $dataFix = [];
     foreach ($data as $pr) {
       $item = [
+        'id' => $pr['id'],
         'title' => $pr['title'],
         'description' => $pr['description'],
         'url' => $pr['links']['html']['href'],
-        'id' => $pr['id'],
         'destination' => $pr['destination']['branch']['name'],
         'source' => $pr['source']['branch']['name'],
         'state' => $pr['state'],
