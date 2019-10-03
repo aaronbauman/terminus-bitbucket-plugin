@@ -10,7 +10,7 @@ namespace Pantheon\TerminusBitbucket\Commands;
 class PullRequestCreateCommand extends BitbucketBase {
 
   /**
-   * List pull requests.
+   * Create a pull requests.
    *
    * @authorize
    *
@@ -18,7 +18,7 @@ class PullRequestCreateCommand extends BitbucketBase {
    *
    * @aliases bb:pr:create bitbucket:pr:create pr-create
    *
-   * @option string $site The site whose pull requests to list. If not given,
+   * @option string $site The site whose pull request to create. If not given,
    *   try to guess the site from build metadata.
    *
    * @option string $source The source branch from which to create the PR. If
@@ -38,7 +38,7 @@ class PullRequestCreateCommand extends BitbucketBase {
    * @options bool $close Whether to close the source branch upon merging.
    *   Defaults to FALSE.
    *
-   * @usage <site> Lists open pull requests for <site>.
+   * @usage Creates a pull request.
    *
    */
   public function prCreate($options = [
