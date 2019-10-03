@@ -10,7 +10,7 @@ namespace Pantheon\TerminusBitbucket\Commands;
 class PullRequestCloseCommand extends BitbucketBase {
 
   /**
-   * List pull requests.
+   * Close a pull request.
    *
    * @authorize
    *
@@ -20,10 +20,10 @@ class PullRequestCloseCommand extends BitbucketBase {
    *
    * @param int $id The ID of the PR to be closed.
    *
-   * @option string $site The site whose pull requests to list. If not given,
+   * @option string $site The site whose pull request to close. If not given,
    *   try to guess the site from build metadata.
    *
-   * @usage <site> Lists open pull requests for <site>.
+   * @usage Close a  pull request.
    *
    */
   public function prClose($id, $options = ['site' => NULL]) {
