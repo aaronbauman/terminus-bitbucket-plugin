@@ -67,7 +67,7 @@ class PullRequestCreateCommand extends BitbucketBase {
       unset($options['target']);
     }
 
-    if (!empty($reviewers)) {
+    if (!empty($options[reviewers'])) {
       $rev = $options['reviewers'];
       $options['reviewers'] = [];
       foreach ($rev as $reviewer) {
